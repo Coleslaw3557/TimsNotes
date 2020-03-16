@@ -1,4 +1,4 @@
-# Auto renew and import a free Let's Encrypt Certificate on a Fortigate for SSL-VPN
+# Auto renew and auto import a free Let's Encrypt Certificate on a Fortigate for SSL-VPN using APIs.
 
 #### Written by Tim Lister - 03.16.20
 
