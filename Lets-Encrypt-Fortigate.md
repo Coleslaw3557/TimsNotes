@@ -1,13 +1,14 @@
 # Auto renew and auto import a free Let's Encrypt Certificate on a Fortigate for SSL-VPN using APIs.
 
-#### Written by Tim Lister - 03.16.20
+#### Tim Lister - 03.16.20
 
 ### Components:
 
 * Certbot or Traefik (I am using Traefik but it's assumed you're already familiar with it).
 * Treafik-certs-dumper (if using Traefik) - https://github.com/ldez/traefik-certs-dumper
-* Python3.6
-* Python program to connect to FG API and upload or replace certificate.
+* Certbot (if using Certbot instead of Traefik) - https://certbot.eff.org/instructions
+* Python 3.6
+* Python program to connect to FG API and upload or replace certificate. - Matt Sheriff's original version here https://www.ultraviolet.network/post/let-s-encrypt-with-fortigate
 
 ### Certificate Generation:
 
@@ -50,7 +51,7 @@ config system api-user
         set vdom "DMZ"
         config trusthost
             edit 1
-                set ipv4-trusthost 192.168.41.4 255.255.255.255
+                set ipv4-trusthost <ip of your host running the script> 255.255.255.255
             next
         end
 ```
@@ -105,7 +106,7 @@ my_gates = [
 {
     "hostname": "fortigate-500e", # Add this to the systems hosts file. IP must reside in destination VDOM you want the certificate imported into.
     "host_ip":"replace-with-ip", # This IP Address must match what's in your hosts file.
-    "key":"replace-with-api-key",
+    "key":"replace-with--FG-api-key",
     "port": "443",
     "VerifyCert": False
 }
