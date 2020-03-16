@@ -4,7 +4,7 @@
 
 ### Components:
 
-* Certbot or Traefik (I am using Traefik but it's assumed you're already familiar with it).
+* Certbot or Traefik to connect to Let's Encrypt and get a Certificate (I am using Traefik 2.x but unless you're already using it, Certbot is probably the way to go).
 * Treafik-certs-dumper (if using Traefik) - https://github.com/ldez/traefik-certs-dumper
 * Certbot (if using Certbot instead of Traefik) - https://certbot.eff.org/instructions
 * Python 3.6
